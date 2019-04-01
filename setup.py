@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """The setup script."""
 
 from setuptools import setup, find_packages
@@ -11,11 +10,15 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = []
 
-setup_requirements = ['pytest-runner', ]
+setup_requirements = [
+    'pytest-runner',
+]
 
-test_requirements = ['pytest', ]
+test_requirements = [
+    'pytest',
+]
 
 setup(
     author="Gavin C. Martin",
@@ -33,7 +36,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="Data structures for running TensorFlow Object Detection API models",
+    description=
+    "Data structures for running TensorFlow Object Detection API models",
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
@@ -44,7 +48,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/gavincmartin/detection_models',
-    version='0.1.0',
+    url='https://github.com/autognc/detection_models',
+    version='0.1.1',
     zip_safe=False,
 )
