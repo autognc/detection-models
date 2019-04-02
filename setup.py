@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """The setup script."""
 
-import subprocess
 from setuptools import setup, find_packages
 
 with open('README.rst') as readme_file:
@@ -29,8 +28,6 @@ test_requirements = [
     'pytest',
 ]
 
-subprocess.run("./install_tf-od-api.sh", shell=True)
-
 setup(
     author="Gavin C. Martin",
     author_email='gavinmartin@utexas.edu',
@@ -39,13 +36,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
     ],
     description=
     "Data structures for running TensorFlow Object Detection API models",
