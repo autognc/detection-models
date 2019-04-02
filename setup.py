@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """The setup script."""
 
+import subprocess
 from setuptools import setup, find_packages
 
 with open('README.rst') as readme_file:
@@ -10,7 +11,15 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = []
+requirements = [
+    'Cython',
+    'contextlib2',
+    'pillow',
+    'lxml',
+    'jupyter',
+    'matplotlib',
+    'tensorflow',
+]
 
 setup_requirements = [
     'pytest-runner',
@@ -19,6 +28,8 @@ setup_requirements = [
 test_requirements = [
     'pytest',
 ]
+
+subprocess.run("./install_tf-od-api.sh", shell=True)
 
 setup(
     author="Gavin C. Martin",
