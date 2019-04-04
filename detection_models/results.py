@@ -114,9 +114,9 @@ class DetectedBBox(DetectedObject):
                 box=np.array([self.ymin, self.xmin, self.ymax, self.xmax])))
 
     def __str__(self) -> str:
-        return ("label: {}\nconfidence: {:.4}\ndimensions:\n\t".format(
-            self.label, self.confidence) + "\n\t".join([
-                "{}: {:.4}".format(l, v)
+        return ("label: {} | confidence: {:.4f} | ".format(
+            self.label, self.confidence) + " | ".join([
+                "{}: {:.4f}".format(l, v)
                 for l, v in zip(["ymin", "xmin", "ymax", "xmax"],
                                 [self.ymin, self.xmin, self.ymax, self.xmax])
             ]))
