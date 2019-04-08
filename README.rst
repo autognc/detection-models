@@ -1,3 +1,4 @@
+
 ================
 detection-models
 ================
@@ -16,22 +17,20 @@ detection-models
 
 
 
-Data structures for running TensorFlow Object Detection API models
-
+This library abstracts out many of the low-level operations of the TensorFlow
+Object Detection API and provides an object-oriented approach to detecting
+objects with frozen inference graphs.
 
 * Free software: MIT license
 * Documentation: https://detection-models.readthedocs.io.
+* Demo: https://github.com/autognc/detection-models/blob/master/detection_models_demo.ipynb
 
+Installation
+------------
+This package is heavily dependent upon the TensorFlow Object Detection API. Unfortunately, the OD API is not packaged for install on PyPI and therefore cannot be installed automatically as a dependency when installing `detection-models` from PyPI. To successfully install and use this package, users must:
 
-Features
---------
+1. Install the TensorFlow Object Detection API (https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).
 
-* TODO
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+2. Install `detection-models` from PyPI.
+.. code::
+        pip install detection-models
