@@ -2,6 +2,13 @@
 History
 =======
 
+0.1.2 (2019-04-08)
+------------------
+
+* Added ObjectDetector and DetectedObject classes and subclasses
+* Added demo
+
+
 0.1.1 (2019-04-01)
 ------------------
 
