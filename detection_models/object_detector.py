@@ -13,6 +13,29 @@ import detection_models.results
 
 
 class ObjectDetector(ABC):
+    """An abstract base class for representing TF Object Detection API models
+
+    This class and abstracts out many of the underlying operations necessary
+    for loading a TensorFlow Object Detection API model.
+    
+    Attributes:
+        _graph (tf.Graph): the TensorFlow Graph object that represents the
+            frozen inference graph
+        _category_index (dict): a dictionary that stores the model's ID->label
+            associations from the input label map; the keys are the class IDs
+            (stored as `int`s), and each value is a dict with:
+                "id": the class ID
+                "name": the class name
+        _session (tf.Session): the running TensorFlow session that represents
+            the connection between the Python runtime and underlying C++ engine
+        _tensor_dict (dict): a dictionary that stores the tensor names (as 
+            `str` keys) and tf.Tensor objects for the given model that will
+            be supplied as "fetches" to a tf.Session.run() call; these are the
+            return values of the session run
+        _image_tensor (tf.Tensor): the image tensor that constitutes the
+            tf.Session.run() feed_dict when paired with input images
+    """
+
     def __init__(self, model_path: Path, label_map_path: Path):
         self._graph = self._load_graph(str(model_path.absolute()))
         self._category_index = label_map_util.create_category_index_from_labelmap(
